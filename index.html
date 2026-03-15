@@ -1,12 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Fake News Detection</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container{
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .card{
+            background: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        textarea{
+            width: 100%;
+            height: 120px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button{
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background: #0056b3;
+        }
+
+        .features li{
+            margin: 8px 0;
+        }
+
+        footer{
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+            background: #222;
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>Fake News Detection Project</h1>
-<p>This project detects whether news is real or fake using Machine Learning.</p>
+<header>
+    <h1>📰 Fake News Detection System</h1>
+    <p>Machine Learning Based News Verification</p>
+</header>
+
+<div class="container">
+
+    <!-- Project Description -->
+    <div class="card">
+        <h2>📌 About Project</h2>
+        <p>
+            This project detects whether a news article is <b>Real</b> or <b>Fake</b>
+            using Machine Learning and Natural Language Processing (NLP).
+            Users can enter news content and get prediction results instantly.
+        </p>
+    </div>
+
+    <!-- Input Section -->
+    <div class="card">
+        <h2>🔎 Check News</h2>
+
+        <form action="/predict" method="POST">
+            <textarea name="news"
+            placeholder="Paste news article here..." required></textarea>
+
+            <br>
+            <button type="submit">Detect News</button>
+        </form>
+    </div>
+
+    <!-- Features Section -->
+    <div class="card">
+        <h2>✨ Features</h2>
+        <ul class="features">
+            <li>✅ Machine Learning based prediction</li>
+            <li>✅ Real-time fake news detection</li>
+            <li>✅ NLP text preprocessing</li>
+            <li>✅ User-friendly interface</li>
+            <li>✅ Fast and accurate classification</li>
+            <li>✅ Works with large news datasets</li>
+        </ul>
+    </div>
+
+    <!-- Technology Section -->
+    <div class="card">
+        <h2>⚙️ Technologies Used</h2>
+        <ul>
+            <li>Python</li>
+            <li>Flask Framework</li>
+            <li>Machine Learning (Scikit-learn)</li>
+            <li>HTML & CSS</li>
+            <li>Natural Language Processing</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer>
+    <p>Fake News Detection Project | Student AI Project</p>
+</footer>
 
 </body>
 </html>
