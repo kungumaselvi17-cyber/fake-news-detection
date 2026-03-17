@@ -1,13 +1,23 @@
+from flask import Flask, render_template, request
 from predict import predict_news
 
-print("📰 Fake News Detection System")
-print("--------------------------------")
-while True:
-    news = input("Enter news text: ")
+app = Flask(__name__)
 
-    result = predict_news(news)
-    print("Prediction:", result)
 
-    choice = input("Check another? (y/n): ")
-    if choice.lower() != "y":
-        break
+@app.route('/')
+def home():
+    return render_template("index.html")
+
+
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    news_text = request.form['news']
+
+    result = predict_news(news_text)
+
+    return f"<h2>Prediction: {result}</h2><br><a href='/'>Go Back</a>"
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
